@@ -8,6 +8,8 @@
 
 **Predicts which credit card customers will miss next month's payment, explains each prediction, and turns it into a decision based on what each kind of mistake costs.**
 
+[![Open the live app](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://credit-risk-scorer-h3p79hjdzkyvnondvpcp95.streamlit.app/) **Live demo:** score a customer, see the reasons, and change the cost of each mistake to watch the decision policy adapt.
+
 Built on 30,000 real customers of a Taiwanese bank. The emphasis is on what makes a credit model usable in practice: probabilities that can be trusted, a decision threshold set by business cost instead of accuracy, reasons for every score, and an audit of how decisions differ across demographic groups.
 
 ## Results
@@ -65,6 +67,8 @@ Built on 30,000 real customers of a Taiwanese bank. The emphasis is on what make
 - **False positive rates differ by education** (28% for graduate school vs 41% for high school). The gap follows a real difference in default rates (19% vs 26%). When groups' true rates differ, a model cannot be both calibrated within groups and have equal false positive rates, so a bank must choose which criterion matters for each use. That's a policy decision, documented here instead of being settled silently in code.
 
 ## The app
+
+**Try it online: [credit-risk-scorer.streamlit.app](https://credit-risk-scorer-h3p79hjdzkyvnondvpcp95.streamlit.app/)**, or run it locally:
 
 ```bash
 streamlit run app/streamlit_app.py
