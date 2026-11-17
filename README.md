@@ -68,7 +68,7 @@ Built on 30,000 real customers of a Taiwanese bank. The emphasis is on what make
 
 ## The app
 
-**Try it online: [credit-risk-scorer.streamlit.app](https://credit-risk-scorer-h3p79hjdzkyvnondvpcp95.streamlit.app/)**, or run it locally:
+**[Try it online](https://credit-risk-scorer-h3p79hjdzkyvnondvpcp95.streamlit.app/)** (hosted on Streamlit Community Cloud), or run it locally:
 
 ```bash
 streamlit run app/streamlit_app.py
