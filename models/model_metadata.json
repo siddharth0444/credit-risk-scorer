@@ -1,0 +1,166 @@
+{
+  "created_utc": "2026-11-16T15:20:25+00:00",
+  "versions": {
+    "python": "3.14.2",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5"
+  },
+  "data": {
+    "source": "UCI Default of Credit Card Clients (Taiwan, 2005)",
+    "train_rows": 24000,
+    "test_rows": 6000,
+    "default_rate": 0.2212
+  },
+  "inputs": [
+    "LIMIT_BAL",
+    "PAY_1",
+    "PAY_2",
+    "PAY_3",
+    "PAY_4",
+    "PAY_5",
+    "PAY_6",
+    "BILL_AMT1",
+    "BILL_AMT2",
+    "BILL_AMT3",
+    "BILL_AMT4",
+    "BILL_AMT5",
+    "BILL_AMT6",
+    "PAY_AMT1",
+    "PAY_AMT2",
+    "PAY_AMT3",
+    "PAY_AMT4",
+    "PAY_AMT5",
+    "PAY_AMT6"
+  ],
+  "excluded_from_model": [
+    "SEX",
+    "EDUCATION",
+    "MARRIAGE",
+    "AGE"
+  ],
+  "hyperparameters": {
+    "min_samples_leaf": 100,
+    "max_leaf_nodes": 15,
+    "max_features": 0.5,
+    "learning_rate": 0.02,
+    "l2_regularization": 1.0
+  },
+  "decision": {
+    "threshold": 0.17,
+    "theoretical_threshold": 0.16666666666666666,
+    "cost_missed_default": 5.0,
+    "cost_false_alarm": 1.0
+  },
+  "cv_scores": {
+    "Baseline (predict average)": {
+      "roc_auc": 0.5,
+      "pr_auc": 0.2212,
+      "brier": 0.1723,
+      "log_loss": 0.5284,
+      "roc_auc_std": 0.0,
+      "pr_auc_std": 0.0001,
+      "brier_std": 0.0001,
+      "log_loss_std": 0.0001
+    },
+    "Logistic regression": {
+      "roc_auc": 0.7622,
+      "pr_auc": 0.5157,
+      "brier": 0.1396,
+      "log_loss": 0.4441,
+      "roc_auc_std": 0.0074,
+      "pr_auc_std": 0.0163,
+      "brier_std": 0.0019,
+      "log_loss_std": 0.005
+    },
+    "Gradient boosting (default settings)": {
+      "roc_auc": 0.7799,
+      "pr_auc": 0.5556,
+      "brier": 0.1345,
+      "log_loss": 0.4293,
+      "roc_auc_std": 0.0055,
+      "pr_auc_std": 0.008,
+      "brier_std": 0.0013,
+      "log_loss_std": 0.0037
+    },
+    "Gradient boosting (tuned)": {
+      "roc_auc": 0.7859,
+      "pr_auc": 0.5633,
+      "brier": 0.1334,
+      "log_loss": 0.4255,
+      "roc_auc_std": 0.0046,
+      "pr_auc_std": 0.0078,
+      "brier_std": 0.0011,
+      "log_loss_std": 0.0029
+    }
+  },
+  "test_scores": {
+    "Gradient boosting (tuned)": {
+      "roc_auc": 0.7803,
+      "pr_auc": 0.5577,
+      "brier": 0.1347,
+      "log_loss": 0.4287
+    },
+    "Logistic regression": {
+      "roc_auc": 0.7473,
+      "pr_auc": 0.5075,
+      "brier": 0.1421,
+      "log_loss": 0.4502
+    }
+  },
+  "test_decision": {
+    "threshold": 0.17,
+    "tp": 961,
+    "fp": 1586,
+    "fn": 366,
+    "tn": 3087,
+    "flagged_rate": 0.4245,
+    "recall": 0.7242,
+    "precision": 0.3773,
+    "false_positive_rate": 0.3394,
+    "cost_per_customer": 0.5693
+  },
+  "test_no_model_cost": {
+    "flag_nobody": 1.1058,
+    "flag_everyone": 0.7788
+  },
+  "reference_profile": {
+    "LIMIT_BAL": 150000.0,
+    "PAY_1": 0.0,
+    "PAY_2": 0.0,
+    "PAY_3": 0.0,
+    "PAY_4": 0.0,
+    "PAY_5": 0.0,
+    "PAY_6": 0.0,
+    "BILL_AMT1": 23051.0,
+    "BILL_AMT2": 21524.0,
+    "BILL_AMT3": 20112.0,
+    "BILL_AMT4": 18957.0,
+    "BILL_AMT5": 17990.0,
+    "BILL_AMT6": 16544.0,
+    "PAY_AMT1": 2471.0,
+    "PAY_AMT2": 2263.0,
+    "PAY_AMT3": 2000.0,
+    "PAY_AMT4": 1741.0,
+    "PAY_AMT5": 1792.0,
+    "PAY_AMT6": 1703.0
+  },
+  "risk_bands": [
+    [
+      0.1,
+      "Low"
+    ],
+    [
+      0.3,
+      "Medium"
+    ],
+    [
+      0.5,
+      "High"
+    ],
+    [
+      1.01,
+      "Very high"
+    ]
+  ]
+}
